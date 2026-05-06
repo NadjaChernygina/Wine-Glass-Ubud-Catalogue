@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
     <style>
       *,
       *::before,
@@ -121,6 +125,41 @@
         background: var(--accent);
         border-color: var(--accent);
         color: #fff;
+      }
+
+      .filter-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 7px 14px;
+        border-radius: 8px;
+        border: 0.5px solid rgba(0, 0, 0, 0.2);
+        background: transparent;
+        color: #666;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        white-space: nowrap;
+      }
+      .filter-btn i {
+        font-size: 16px;
+        color: #378add;
+        flex-shrink: 0;
+        transition: color 0.15s ease;
+      }
+      .filter-btn:hover {
+        background: #f5f5f5;
+        border-color: #378add;
+        color: #333;
+      }
+      .filter-btn.active {
+        background: #e6f1fb;
+        border-color: #378add;
+        color: #185fa5;
+        font-weight: 500;
+      }
+      .filter-btn.active i {
+        color: #185fa5;
       }
 
       /* GRID */
@@ -287,7 +326,7 @@
       />
     </div>
 
-    <div class="filter-wrap">
+    <!-- <div class="filter-wrap">
       <button class="filter-btn active" onclick="filter('all', this)">
         Всё
       </button>
@@ -310,12 +349,6 @@
       <button class="filter-btn" onclick="filter('Бары_и_стеллажи', this)">
         Бары и стеллажи
       </button>
-      <button
-        class="filter-btn"
-        onclick="filter('Дополнительное_оборудование', this)"
-      >
-        Дополнительное оборудование
-      </button>
       <button class="filter-btn" onclick="filter('Фотозона', this)">
         Фотозона
       </button>
@@ -334,6 +367,69 @@
       <button class="filter-btn" onclick="filter('Улица', this)">Улица</button>
       <button class="filter-btn" onclick="filter('Мебель_из_паллет', this)">
         Мебель из паллет
+      </button>
+      <button
+        class="filter-btn"
+        onclick="filter('Дополнительное_оборудование', this)"
+      >
+        Дополнительное оборудование
+      </button>
+    </div>-->
+
+    <!-- Кнопки -->
+    <div class="filter-wrap">
+      <button class="filter-btn active" onclick="filter('all', this)">
+        <i class="ti ti-layout-grid" aria-hidden="true"></i>Всё
+      </button>
+
+      <button class="filter-btn" onclick="filter('Столы', this)">
+        <i class="ti ti-border-all" aria-hidden="true"></i>Столы
+      </button>
+      <button class="filter-btn" onclick="filter('Стулья', this)">
+        <i class="ti ti-armchair" aria-hidden="true"></i>Стулья
+      </button>
+      <button class="filter-btn" onclick="filter('Кресла', this)">
+        <i class="ti ti-sofa" aria-hidden="true"></i>Кресла
+      </button>
+      <button
+        class="filter-btn"
+        onclick="filter('Мебель_для_деловых_мероприятий', this)"
+      >
+        <i class="ti ti-briefcase" aria-hidden="true"></i>Мебель для деловых
+        мероприятий
+      </button>
+      <button class="filter-btn" onclick="filter('Lounge', this)">
+        <i class="ti ti-armchair-2" aria-hidden="true"></i>Lounge
+      </button>
+      <button class="filter-btn" onclick="filter('Бары_и_стеллажи', this)">
+        <i class="ti ti-glass-cocktail" aria-hidden="true"></i>Бары и стеллажи
+      </button>
+      <button class="filter-btn" onclick="filter('Фотозона', this)">
+        <i class="ti ti-camera" aria-hidden="true"></i>Фотозона
+      </button>
+      <button class="filter-btn" onclick="filter('Посуда', this)">
+        <i class="ti ti-disc" aria-hidden="true"></i>Посуда
+      </button>
+      <button class="filter-btn" onclick="filter('Пуфы_и_банкетки', this)">
+        <i class="ti ti-cube" aria-hidden="true"></i>Пуфы и банкетки
+      </button>
+      <button
+        class="filter-btn"
+        onclick="filter('Тепловое_оборудование', this)"
+      >
+        <i class="ti ti-flame" aria-hidden="true"></i>Тепловое оборудование
+      </button>
+      <button class="filter-btn" onclick="filter('Улица', this)">
+        <i class="ti ti-trees" aria-hidden="true"></i>Улица
+      </button>
+      <button class="filter-btn" onclick="filter('Мебель_из_паллет', this)">
+        <i class="ti ti-packages" aria-hidden="true"></i>Мебель из паллет
+      </button>
+      <button
+        class="filter-btn"
+        onclick="filter('Дополнительное_оборудование', this)"
+      >
+        <i class="ti ti-tool" aria-hidden="true"></i>Дополнительное оборудование
       </button>
     </div>
 

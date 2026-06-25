@@ -211,96 +211,6 @@
         margin-left: 2px;
       }
 
-      .qty-control {
-        display: flex;
-        align-items: center;
-        gap: 0;
-        border: 0.5px solid var(--border);
-        border-radius: 100px;
-        overflow: hidden;
-        background: var(--white);
-      }
-      .qty-btn {
-        width: 24px;
-        height: 24px;
-        border: none;
-        background: var(--accent-light);
-        color: var(--accent);
-        font-size: 14px;
-        line-height: 1;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        transition: background 0.15s ease;
-        padding: 0;
-      }
-      .qty-btn:hover {
-        background: var(--accent);
-        color: var(--white);
-      }
-      .qty-input {
-        width: 32px;
-        height: 24px;
-        border: none;
-        text-align: center;
-        font-family: "DM Sans", sans-serif;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--text);
-        background: transparent;
-        -moz-appearance: textfield;
-      }
-      .qty-input:focus {
-        outline: none;
-        background: var(--accent-light);
-      }
-      .qty-input::-webkit-outer-spin-button,
-      .qty-input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      .qty-control.saved {
-        animation: qtyPulse 0.4s ease;
-      }
-      @keyframes qtyPulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(95, 88, 172, 0.35);
-        }
-        100% {
-          box-shadow: 0 0 0 4px rgba(95, 88, 172, 0);
-        }
-      }
-
-      .inventory-bar {
-        max-width: 1200px;
-        margin: 0 auto 1.5rem;
-        padding: 0 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 0.75rem;
-      }
-      .inventory-status {
-        font-size: 11px;
-        color: var(--text-muted);
-      }
-      .inventory-reset {
-        font-family: "DM Sans", sans-serif;
-        font-size: 11px;
-        color: var(--accent);
-        background: var(--white);
-        border: 0.5px solid var(--border);
-        border-radius: 100px;
-        padding: 5px 12px;
-        cursor: pointer;
-        transition: background 0.15s ease;
-      }
-      .inventory-reset:hover {
-        background: var(--accent-light);
-      }
-
       footer {
         text-align: center;
         padding: 3rem 2rem;
@@ -348,13 +258,6 @@
       </button>
     </div>
 
-    <div class="inventory-bar">
-      <span class="inventory-status" id="inventoryStatus"></span>
-      <button class="inventory-reset" onclick="resetInventory()">
-        Очистити всі кількості
-      </button>
-    </div>
-
     <div class="catalogue">
       <div class="card" data-cat="whiskey">
         <div class="card-img">
@@ -368,8 +271,7 @@
           <div class="card-name">Whiskey glass tumbler spiked</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-8"><button type="button" class="qty-btn" onclick="changeQty('GLS-8',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-8', this.value)" data-code="GLS-8"><button type="button" class="qty-btn" onclick="changeQty('GLS-8',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="whiskey">
@@ -384,8 +286,7 @@
           <div class="card-name">Whiskey glass tumbler rocks</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-9"><button type="button" class="qty-btn" onclick="changeQty('GLS-9',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-9', this.value)" data-code="GLS-9"><button type="button" class="qty-btn" onclick="changeQty('GLS-9',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="whiskey">
@@ -400,8 +301,7 @@
           <div class="card-name">Whiskey glass tumbler ribbed</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-10"><button type="button" class="qty-btn" onclick="changeQty('GLS-10',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-10', this.value)" data-code="GLS-10"><button type="button" class="qty-btn" onclick="changeQty('GLS-10',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -416,8 +316,7 @@
           <div class="card-name">Gold rimmed wine glass 340ml</div>
           <div class="card-footer">
             <div class="card-price">90k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-11"><button type="button" class="qty-btn" onclick="changeQty('GLS-11',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-11', this.value)" data-code="GLS-11"><button type="button" class="qty-btn" onclick="changeQty('GLS-11',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -432,8 +331,7 @@
           <div class="card-name">Gold rimmed champagne glass 310ml</div>
           <div class="card-footer">
             <div class="card-price">90k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-12"><button type="button" class="qty-btn" onclick="changeQty('GLS-12',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-12', this.value)" data-code="GLS-12"><button type="button" class="qty-btn" onclick="changeQty('GLS-12',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -448,8 +346,7 @@
           <div class="card-name">Flower cup</div>
           <div class="card-footer">
             <div class="card-price">100k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-14"><button type="button" class="qty-btn" onclick="changeQty('GLS-14',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-14', this.value)" data-code="GLS-14"><button type="button" class="qty-btn" onclick="changeQty('GLS-14',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -464,8 +361,7 @@
           <div class="card-name">Flower tall water glass</div>
           <div class="card-footer">
             <div class="card-price">100k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-15"><button type="button" class="qty-btn" onclick="changeQty('GLS-15',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-15', this.value)" data-code="GLS-15"><button type="button" class="qty-btn" onclick="changeQty('GLS-15',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -480,8 +376,7 @@
           <div class="card-name">Flower bottle</div>
           <div class="card-footer">
             <div class="card-price">409k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-16"><button type="button" class="qty-btn" onclick="changeQty('GLS-16',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-16', this.value)" data-code="GLS-16"><button type="button" class="qty-btn" onclick="changeQty('GLS-16',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -496,8 +391,7 @@
           <div class="card-name">Flower dessert cup</div>
           <div class="card-footer">
             <div class="card-price">120k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-17"><button type="button" class="qty-btn" onclick="changeQty('GLS-17',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-17', this.value)" data-code="GLS-17"><button type="button" class="qty-btn" onclick="changeQty('GLS-17',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -512,8 +406,7 @@
           <div class="card-name">Flower goblet</div>
           <div class="card-footer">
             <div class="card-price">130k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-18"><button type="button" class="qty-btn" onclick="changeQty('GLS-18',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-18', this.value)" data-code="GLS-18"><button type="button" class="qty-btn" onclick="changeQty('GLS-18',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -528,8 +421,7 @@
           <div class="card-name">Flower ice cream cup</div>
           <div class="card-footer">
             <div class="card-price">120k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-19"><button type="button" class="qty-btn" onclick="changeQty('GLS-19',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-19', this.value)" data-code="GLS-19"><button type="button" class="qty-btn" onclick="changeQty('GLS-19',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -544,8 +436,7 @@
           <div class="card-name">Red wine glass clear 380ml</div>
           <div class="card-footer">
             <div class="card-price">115k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-2"><button type="button" class="qty-btn" onclick="changeQty('GLS-2',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-2', this.value)" data-code="GLS-2"><button type="button" class="qty-btn" onclick="changeQty('GLS-2',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -560,8 +451,7 @@
           <div class="card-name">Red Wine Glass red 380ml</div>
           <div class="card-footer">
             <div class="card-price">130k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-44"><button type="button" class="qty-btn" onclick="changeQty('GLS-44',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-44', this.value)" data-code="GLS-44"><button type="button" class="qty-btn" onclick="changeQty('GLS-44',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -576,8 +466,7 @@
           <div class="card-name">Red Wine Glass black 380ml</div>
           <div class="card-footer">
             <div class="card-price">130k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-45"><button type="button" class="qty-btn" onclick="changeQty('GLS-45',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-45', this.value)" data-code="GLS-45"><button type="button" class="qty-btn" onclick="changeQty('GLS-45',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -592,8 +481,7 @@
           <div class="card-name">Tulip champagne glass 245ml</div>
           <div class="card-footer">
             <div class="card-price">110k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-5"><button type="button" class="qty-btn" onclick="changeQty('GLS-5',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-5', this.value)" data-code="GLS-5"><button type="button" class="qty-btn" onclick="changeQty('GLS-5',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -608,8 +496,7 @@
           <div class="card-name">Diagonal cut champagne glass 185ml</div>
           <div class="card-footer">
             <div class="card-price">110k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-6"><button type="button" class="qty-btn" onclick="changeQty('GLS-6',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-6', this.value)" data-code="GLS-6"><button type="button" class="qty-btn" onclick="changeQty('GLS-6',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -624,8 +511,7 @@
           <div class="card-name">Vintage champagne glass 200ml</div>
           <div class="card-footer">
             <div class="card-price">120k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-7"><button type="button" class="qty-btn" onclick="changeQty('GLS-7',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-7', this.value)" data-code="GLS-7"><button type="button" class="qty-btn" onclick="changeQty('GLS-7',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -640,8 +526,7 @@
           <div class="card-name">Vintage red wine glass 270ml</div>
           <div class="card-footer">
             <div class="card-price">120k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-48"><button type="button" class="qty-btn" onclick="changeQty('GLS-48',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-48', this.value)" data-code="GLS-48"><button type="button" class="qty-btn" onclick="changeQty('GLS-48',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -656,8 +541,7 @@
           <div class="card-name">Triangular champagne glass 200ml</div>
           <div class="card-footer">
             <div class="card-price">150k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-23"><button type="button" class="qty-btn" onclick="changeQty('GLS-23',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-23', this.value)" data-code="GLS-23"><button type="button" class="qty-btn" onclick="changeQty('GLS-23',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -672,8 +556,7 @@
           <div class="card-name">Triangular wine glass 350ml</div>
           <div class="card-footer">
             <div class="card-price">150k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-22"><button type="button" class="qty-btn" onclick="changeQty('GLS-22',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-22', this.value)" data-code="GLS-22"><button type="button" class="qty-btn" onclick="changeQty('GLS-22',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -688,8 +571,7 @@
           <div class="card-name">Red wine glass fluted 500ml</div>
           <div class="card-footer">
             <div class="card-price">135k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-24"><button type="button" class="qty-btn" onclick="changeQty('GLS-24',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-24', this.value)" data-code="GLS-24"><button type="button" class="qty-btn" onclick="changeQty('GLS-24',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -704,8 +586,7 @@
           <div class="card-name">White wine glass fluted 350ml</div>
           <div class="card-footer">
             <div class="card-price">135k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-25"><button type="button" class="qty-btn" onclick="changeQty('GLS-25',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-25', this.value)" data-code="GLS-25"><button type="button" class="qty-btn" onclick="changeQty('GLS-25',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -720,8 +601,7 @@
           <div class="card-name">Champagne glass fluted 230ml</div>
           <div class="card-footer">
             <div class="card-price">125k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-50"><button type="button" class="qty-btn" onclick="changeQty('GLS-50',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-50', this.value)" data-code="GLS-50"><button type="button" class="qty-btn" onclick="changeQty('GLS-50',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -736,8 +616,7 @@
           <div class="card-name">Beer glass fluted 350ml</div>
           <div class="card-footer">
             <div class="card-price">135k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-27"><button type="button" class="qty-btn" onclick="changeQty('GLS-27',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-27', this.value)" data-code="GLS-27"><button type="button" class="qty-btn" onclick="changeQty('GLS-27',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <!-- <div class="card" data-cat="water">
@@ -778,8 +657,7 @@
           <div class="card-name">Trapezoidal water glass fluted 460ml</div>
           <div class="card-footer">
             <div class="card-price">97k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-28"><button type="button" class="qty-btn" onclick="changeQty('GLS-28',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-28', this.value)" data-code="GLS-28"><button type="button" class="qty-btn" onclick="changeQty('GLS-28',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div> -->
       <div class="card" data-cat="water">
@@ -794,8 +672,7 @@
           <div class="card-name">Embossed water glass short 390ml</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-29"><button type="button" class="qty-btn" onclick="changeQty('GLS-29',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-29', this.value)" data-code="GLS-29"><button type="button" class="qty-btn" onclick="changeQty('GLS-29',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -810,8 +687,7 @@
           <div class="card-name">Champagne glass crystal 120ml</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-31"><button type="button" class="qty-btn" onclick="changeQty('GLS-31',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-31', this.value)" data-code="GLS-31"><button type="button" class="qty-btn" onclick="changeQty('GLS-31',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -826,8 +702,7 @@
           <div class="card-name">Red Wine Glass crystal 290ml</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-33"><button type="button" class="qty-btn" onclick="changeQty('GLS-33',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-33', this.value)" data-code="GLS-33"><button type="button" class="qty-btn" onclick="changeQty('GLS-33',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -842,8 +717,7 @@
           <div class="card-name">White Wine Glass crystal 230ml</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-34"><button type="button" class="qty-btn" onclick="changeQty('GLS-34',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-34', this.value)" data-code="GLS-34"><button type="button" class="qty-btn" onclick="changeQty('GLS-34',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -858,8 +732,7 @@
           <div class="card-name">Pink gold wine glass 400ml</div>
           <div class="card-footer">
             <div class="card-price">130k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-39"><button type="button" class="qty-btn" onclick="changeQty('GLS-39',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-39', this.value)" data-code="GLS-39"><button type="button" class="qty-btn" onclick="changeQty('GLS-39',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -874,8 +747,7 @@
           <div class="card-name">Pink gold champagne glass 350ml</div>
           <div class="card-footer">
             <div class="card-price">120k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-40"><button type="button" class="qty-btn" onclick="changeQty('GLS-40',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-40', this.value)" data-code="GLS-40"><button type="button" class="qty-btn" onclick="changeQty('GLS-40',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -890,8 +762,7 @@
           <div class="card-name">Pink gold water glass 390ml</div>
           <div class="card-footer">
             <div class="card-price">100k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-41"><button type="button" class="qty-btn" onclick="changeQty('GLS-41',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-41', this.value)" data-code="GLS-41"><button type="button" class="qty-btn" onclick="changeQty('GLS-41',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -906,8 +777,7 @@
           <div class="card-name">Jellyfish wine glass blue</div>
           <div class="card-footer">
             <div class="card-price">170k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-37"><button type="button" class="qty-btn" onclick="changeQty('GLS-37',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-37', this.value)" data-code="GLS-37"><button type="button" class="qty-btn" onclick="changeQty('GLS-37',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -922,8 +792,7 @@
           <div class="card-name">Jellyfish wine glass rose</div>
           <div class="card-footer">
             <div class="card-price">170k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-52"><button type="button" class="qty-btn" onclick="changeQty('GLS-52',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-52', this.value)" data-code="GLS-52"><button type="button" class="qty-btn" onclick="changeQty('GLS-52',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -938,8 +807,7 @@
           <div class="card-name">Red wine glass fluted</div>
           <div class="card-footer">
             <div class="card-price">130k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-53"><button type="button" class="qty-btn" onclick="changeQty('GLS-53',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-53', this.value)" data-code="GLS-53"><button type="button" class="qty-btn" onclick="changeQty('GLS-53',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -954,8 +822,7 @@
           <div class="card-name">White wine glass fluted</div>
           <div class="card-footer">
             <div class="card-price">130k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-54"><button type="button" class="qty-btn" onclick="changeQty('GLS-54',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-54', this.value)" data-code="GLS-54"><button type="button" class="qty-btn" onclick="changeQty('GLS-54',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -970,8 +837,7 @@
           <div class="card-name">Embossed water glass transparent 350ml</div>
           <div class="card-footer">
             <div class="card-price">85k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-87"><button type="button" class="qty-btn" onclick="changeQty('GLS-87',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-87', this.value)" data-code="GLS-87"><button type="button" class="qty-btn" onclick="changeQty('GLS-87',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -986,8 +852,7 @@
           <div class="card-name">Embossed water glass blue 350ml</div>
           <div class="card-footer">
             <div class="card-price">85k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-88"><button type="button" class="qty-btn" onclick="changeQty('GLS-88',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-88', this.value)" data-code="GLS-88"><button type="button" class="qty-btn" onclick="changeQty('GLS-88',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -1002,8 +867,7 @@
           <div class="card-name">Embossed water glass green 350ml</div>
           <div class="card-footer">
             <div class="card-price">85k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-89"><button type="button" class="qty-btn" onclick="changeQty('GLS-89',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-89', this.value)" data-code="GLS-89"><button type="button" class="qty-btn" onclick="changeQty('GLS-89',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="cocktail">
@@ -1018,8 +882,7 @@
           <div class="card-name">Margarita glass 170ml</div>
           <div class="card-footer">
             <div class="card-price">90k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-60"><button type="button" class="qty-btn" onclick="changeQty('GLS-60',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-60', this.value)" data-code="GLS-60"><button type="button" class="qty-btn" onclick="changeQty('GLS-60',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="cocktail">
@@ -1034,8 +897,7 @@
           <div class="card-name">Small coupe glass 150ml</div>
           <div class="card-footer">
             <div class="card-price">110k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-61"><button type="button" class="qty-btn" onclick="changeQty('GLS-61',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-61', this.value)" data-code="GLS-61"><button type="button" class="qty-btn" onclick="changeQty('GLS-61',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="cocktail">
@@ -1050,8 +912,7 @@
           <div class="card-name">Big coupe glass ball stem 250ml</div>
           <div class="card-footer">
             <div class="card-price">120k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-62"><button type="button" class="qty-btn" onclick="changeQty('GLS-62',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-62', this.value)" data-code="GLS-62"><button type="button" class="qty-btn" onclick="changeQty('GLS-62',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="whiskey">
@@ -1066,8 +927,7 @@
           <div class="card-name">Crystal whiskey tumbler classic</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-63"><button type="button" class="qty-btn" onclick="changeQty('GLS-63',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-63', this.value)" data-code="GLS-63"><button type="button" class="qty-btn" onclick="changeQty('GLS-63',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="whiskey">
@@ -1082,8 +942,7 @@
           <div class="card-name">Tulip whiskey glass</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-64"><button type="button" class="qty-btn" onclick="changeQty('GLS-64',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-64', this.value)" data-code="GLS-64"><button type="button" class="qty-btn" onclick="changeQty('GLS-64',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -1098,8 +957,7 @@
           <div class="card-name">Crystal sparkling wine glass 240ml</div>
           <div class="card-footer">
             <div class="card-price">150k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-68"><button type="button" class="qty-btn" onclick="changeQty('GLS-68',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-68', this.value)" data-code="GLS-68"><button type="button" class="qty-btn" onclick="changeQty('GLS-68',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -1114,8 +972,7 @@
           <div class="card-name">Crystal white wine glass 340ml</div>
           <div class="card-footer">
             <div class="card-price">150k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-69"><button type="button" class="qty-btn" onclick="changeQty('GLS-69',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-69', this.value)" data-code="GLS-69"><button type="button" class="qty-btn" onclick="changeQty('GLS-69',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -1130,8 +987,7 @@
           <div class="card-name">Crystal burgundy glass 710ml</div>
           <div class="card-footer">
             <div class="card-price">150k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-70"><button type="button" class="qty-btn" onclick="changeQty('GLS-70',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-70', this.value)" data-code="GLS-70"><button type="button" class="qty-btn" onclick="changeQty('GLS-70',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -1146,8 +1002,7 @@
           <div class="card-name">Crystal bordeaux glass 590ml</div>
           <div class="card-footer">
             <div class="card-price">150k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-71"><button type="button" class="qty-btn" onclick="changeQty('GLS-71',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-71', this.value)" data-code="GLS-71"><button type="button" class="qty-btn" onclick="changeQty('GLS-71',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -1162,8 +1017,7 @@
           <div class="card-name">Bordeaux glass clear 600ml</div>
           <div class="card-footer">
             <div class="card-price">100k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-72"><button type="button" class="qty-btn" onclick="changeQty('GLS-72',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-72', this.value)" data-code="GLS-72"><button type="button" class="qty-btn" onclick="changeQty('GLS-72',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -1178,8 +1032,7 @@
           <div class="card-name">Burgundy glass 500ml</div>
           <div class="card-footer">
             <div class="card-price">130k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-91"><button type="button" class="qty-btn" onclick="changeQty('GLS-91',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-91', this.value)" data-code="GLS-91"><button type="button" class="qty-btn" onclick="changeQty('GLS-91',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -1194,8 +1047,7 @@
           <div class="card-name">White wine glass fluted 475ml</div>
           <div class="card-footer">
             <div class="card-price">85k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-92"><button type="button" class="qty-btn" onclick="changeQty('GLS-92',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-92', this.value)" data-code="GLS-92"><button type="button" class="qty-btn" onclick="changeQty('GLS-92',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -1210,8 +1062,7 @@
           <div class="card-name">Champagne glass crystal 275ml</div>
           <div class="card-footer">
             <div class="card-price">85k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-93"><button type="button" class="qty-btn" onclick="changeQty('GLS-93',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-93', this.value)" data-code="GLS-93"><button type="button" class="qty-btn" onclick="changeQty('GLS-93',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -1226,8 +1077,7 @@
           <div class="card-name">Water glass 376ml</div>
           <div class="card-footer">
             <div class="card-price">75k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-94"><button type="button" class="qty-btn" onclick="changeQty('GLS-94',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-94', this.value)" data-code="GLS-94"><button type="button" class="qty-btn" onclick="changeQty('GLS-94',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -1242,8 +1092,7 @@
           <div class="card-name">Water glass 337ml</div>
           <div class="card-footer">
             <div class="card-price">75k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-95"><button type="button" class="qty-btn" onclick="changeQty('GLS-95',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-95', this.value)" data-code="GLS-95"><button type="button" class="qty-btn" onclick="changeQty('GLS-95',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="cocktail">
@@ -1258,8 +1107,7 @@
           <div class="card-name">Martini glass 130ml</div>
           <div class="card-footer">
             <div class="card-price">80k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-73"><button type="button" class="qty-btn" onclick="changeQty('GLS-73',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-73', this.value)" data-code="GLS-73"><button type="button" class="qty-btn" onclick="changeQty('GLS-73',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -1274,8 +1122,7 @@
           <div class="card-name">Water glass 340ml</div>
           <div class="card-footer">
             <div class="card-price">40k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-96"><button type="button" class="qty-btn" onclick="changeQty('GLS-96',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-96', this.value)" data-code="GLS-96"><button type="button" class="qty-btn" onclick="changeQty('GLS-96',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="cocktail">
@@ -1290,8 +1137,7 @@
           <div class="card-name">Japanese cocktail coupe 150ml</div>
           <div class="card-footer">
             <div class="card-price">110k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-74"><button type="button" class="qty-btn" onclick="changeQty('GLS-74',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-74', this.value)" data-code="GLS-74"><button type="button" class="qty-btn" onclick="changeQty('GLS-74',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="whiskey">
@@ -1306,8 +1152,7 @@
           <div class="card-name">Whiskey tumbler straight lines</div>
           <div class="card-footer">
             <div class="card-price">60k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-75"><button type="button" class="qty-btn" onclick="changeQty('GLS-75',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-75', this.value)" data-code="GLS-75"><button type="button" class="qty-btn" onclick="changeQty('GLS-75',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -1322,8 +1167,7 @@
           <div class="card-name">Beer glass 450ml</div>
           <div class="card-footer">
             <div class="card-price">40k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-76"><button type="button" class="qty-btn" onclick="changeQty('GLS-76',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-76', this.value)" data-code="GLS-76"><button type="button" class="qty-btn" onclick="changeQty('GLS-76',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -1338,8 +1182,7 @@
           <div class="card-name">Short water glass clear 500ml</div>
           <div class="card-footer">
             <div class="card-price">60k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-77"><button type="button" class="qty-btn" onclick="changeQty('GLS-77',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-77', this.value)" data-code="GLS-77"><button type="button" class="qty-btn" onclick="changeQty('GLS-77',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -1354,8 +1197,7 @@
           <div class="card-name">Tall water glass clear 750ml</div>
           <div class="card-footer">
             <div class="card-price">60k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-79"><button type="button" class="qty-btn" onclick="changeQty('GLS-79',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-79', this.value)" data-code="GLS-79"><button type="button" class="qty-btn" onclick="changeQty('GLS-79',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="cocktail">
@@ -1370,8 +1212,7 @@
           <div class="card-name">Cocktail coupe glass 150ml</div>
           <div class="card-footer">
             <div class="card-price">110k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-80"><button type="button" class="qty-btn" onclick="changeQty('GLS-80',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-80', this.value)" data-code="GLS-80"><button type="button" class="qty-btn" onclick="changeQty('GLS-80',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="cocktail">
@@ -1386,8 +1227,7 @@
           <div class="card-name">Cocktail coupe fluted</div>
           <div class="card-footer">
             <div class="card-price">145k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-81"><button type="button" class="qty-btn" onclick="changeQty('GLS-81',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-81', this.value)" data-code="GLS-81"><button type="button" class="qty-btn" onclick="changeQty('GLS-81',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="wine">
@@ -1402,8 +1242,7 @@
           <div class="card-name">Red/white wine glass</div>
           <div class="card-footer">
             <div class="card-price">135k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-97"><button type="button" class="qty-btn" onclick="changeQty('GLS-97',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-97', this.value)" data-code="GLS-97"><button type="button" class="qty-btn" onclick="changeQty('GLS-97',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="champagne">
@@ -1418,8 +1257,7 @@
           <div class="card-name">Champagne glass</div>
           <div class="card-footer">
             <div class="card-price">125k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-98"><button type="button" class="qty-btn" onclick="changeQty('GLS-98',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-98', this.value)" data-code="GLS-98"><button type="button" class="qty-btn" onclick="changeQty('GLS-98',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="water">
@@ -1434,8 +1272,7 @@
           <div class="card-name">Water glass clear 450ml</div>
           <div class="card-footer">
             <div class="card-price">70k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-82"><button type="button" class="qty-btn" onclick="changeQty('GLS-82',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-82', this.value)" data-code="GLS-82"><button type="button" class="qty-btn" onclick="changeQty('GLS-82',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="cocktail">
@@ -1450,8 +1287,7 @@
           <div class="card-name">Cocktail coupe glass</div>
           <div class="card-footer">
             <div class="card-price">130k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-83"><button type="button" class="qty-btn" onclick="changeQty('GLS-83',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-83', this.value)" data-code="GLS-83"><button type="button" class="qty-btn" onclick="changeQty('GLS-83',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="cocktail">
@@ -1466,8 +1302,7 @@
           <div class="card-name">Martini glass 254ml</div>
           <div class="card-footer">
             <div class="card-price">119k <span>IDR</span></div>
-          <div class="qty-control" data-code="GLS-84"><button type="button" class="qty-btn" onclick="changeQty('GLS-84',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('GLS-84', this.value)" data-code="GLS-84"><button type="button" class="qty-btn" onclick="changeQty('GLS-84',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1482,8 +1317,7 @@
           <div class="card-name">Serving plate 33cm</div>
           <div class="card-footer">
             <div class="card-price">150k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-1"><button type="button" class="qty-btn" onclick="changeQty('PLT-1',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-1', this.value)" data-code="PLT-1"><button type="button" class="qty-btn" onclick="changeQty('PLT-1',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1498,8 +1332,7 @@
           <div class="card-name">Serving plate 33cm</div>
           <div class="card-footer">
             <div class="card-price">150k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-2"><button type="button" class="qty-btn" onclick="changeQty('PLT-2',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-2', this.value)" data-code="PLT-2"><button type="button" class="qty-btn" onclick="changeQty('PLT-2',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1514,8 +1347,7 @@
           <div class="card-name">Serving plate 27cm</div>
           <div class="card-footer">
             <div class="card-price">130k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-3"><button type="button" class="qty-btn" onclick="changeQty('PLT-3',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-3', this.value)" data-code="PLT-3"><button type="button" class="qty-btn" onclick="changeQty('PLT-3',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1530,8 +1362,7 @@
           <div class="card-name">Serving plate 33cm</div>
           <div class="card-footer">
             <div class="card-price">280k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-4"><button type="button" class="qty-btn" onclick="changeQty('PLT-4',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-4', this.value)" data-code="PLT-4"><button type="button" class="qty-btn" onclick="changeQty('PLT-4',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1546,8 +1377,7 @@
           <div class="card-name">Porcelain serving plate 32cm</div>
           <div class="card-footer">
             <div class="card-price">560k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-6"><button type="button" class="qty-btn" onclick="changeQty('PLT-6',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-6', this.value)" data-code="PLT-6"><button type="button" class="qty-btn" onclick="changeQty('PLT-6',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1562,8 +1392,7 @@
           <div class="card-name">Porcelain serving plate 32cm</div>
           <div class="card-footer">
             <div class="card-price">560k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-7"><button type="button" class="qty-btn" onclick="changeQty('PLT-7',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-7', this.value)" data-code="PLT-7"><button type="button" class="qty-btn" onclick="changeQty('PLT-7',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1578,8 +1407,7 @@
           <div class="card-name">Porcelain serving plate 32cm</div>
           <div class="card-footer">
             <div class="card-price">560k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-8"><button type="button" class="qty-btn" onclick="changeQty('PLT-8',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-8', this.value)" data-code="PLT-8"><button type="button" class="qty-btn" onclick="changeQty('PLT-8',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1594,8 +1422,7 @@
           <div class="card-name">Porcelain serving plate 32cm</div>
           <div class="card-footer">
             <div class="card-price">560k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-9"><button type="button" class="qty-btn" onclick="changeQty('PLT-9',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-9', this.value)" data-code="PLT-9"><button type="button" class="qty-btn" onclick="changeQty('PLT-9',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1610,8 +1437,7 @@
           <div class="card-name">Porcelain serving plate 32cm</div>
           <div class="card-footer">
             <div class="card-price">560k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-10"><button type="button" class="qty-btn" onclick="changeQty('PLT-10',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-10', this.value)" data-code="PLT-10"><button type="button" class="qty-btn" onclick="changeQty('PLT-10',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1626,8 +1452,7 @@
           <div class="card-name">Serving plate 32cm</div>
           <div class="card-footer">
             <div class="card-price">150k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-11"><button type="button" class="qty-btn" onclick="changeQty('PLT-11',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-11', this.value)" data-code="PLT-11"><button type="button" class="qty-btn" onclick="changeQty('PLT-11',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1642,8 +1467,7 @@
           <div class="card-name">Porcelain serving plate 26cm</div>
           <div class="card-footer">
             <div class="card-price">290k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-12"><button type="button" class="qty-btn" onclick="changeQty('PLT-12',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-12', this.value)" data-code="PLT-12"><button type="button" class="qty-btn" onclick="changeQty('PLT-12',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1658,8 +1482,7 @@
           <div class="card-name">Porcelain serving plate 26cm</div>
           <div class="card-footer">
             <div class="card-price">290k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-14"><button type="button" class="qty-btn" onclick="changeQty('PLT-14',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-14', this.value)" data-code="PLT-14"><button type="button" class="qty-btn" onclick="changeQty('PLT-14',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="plate">
@@ -1674,8 +1497,7 @@
           <div class="card-name">Porcelain serving plate 26cm</div>
           <div class="card-footer">
             <div class="card-price">290k <span>IDR</span></div>
-          <div class="qty-control" data-code="PLT-15"><button type="button" class="qty-btn" onclick="changeQty('PLT-15',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('PLT-15', this.value)" data-code="PLT-15"><button type="button" class="qty-btn" onclick="changeQty('PLT-15',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1690,8 +1512,7 @@
           <div class="card-name">LED lamp 26×12cm</div>
           <div class="card-footer">
             <div class="card-price">140k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-6"><button type="button" class="qty-btn" onclick="changeQty('MSC-6',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-6', this.value)" data-code="MSC-6"><button type="button" class="qty-btn" onclick="changeQty('MSC-6',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1706,8 +1527,7 @@
           <div class="card-name">Cloth napkin 40×40cm</div>
           <div class="card-footer">
             <div class="card-price">70k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-7"><button type="button" class="qty-btn" onclick="changeQty('MSC-7',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-7', this.value)" data-code="MSC-7"><button type="button" class="qty-btn" onclick="changeQty('MSC-7',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1722,8 +1542,7 @@
           <div class="card-name">Tablecloth 150×250cm</div>
           <div class="card-footer">
             <div class="card-price">800k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-8"><button type="button" class="qty-btn" onclick="changeQty('MSC-8',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-8', this.value)" data-code="MSC-8"><button type="button" class="qty-btn" onclick="changeQty('MSC-8',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1738,8 +1557,7 @@
           <div class="card-name">Tablecloth & 6 napkins set</div>
           <div class="card-footer">
             <div class="card-price">1300k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-9"><button type="button" class="qty-btn" onclick="changeQty('MSC-9',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-9', this.value)" data-code="MSC-9"><button type="button" class="qty-btn" onclick="changeQty('MSC-9',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1754,8 +1572,7 @@
           <div class="card-name">Silver cutlery set (4 items)</div>
           <div class="card-footer">
             <div class="card-price">50k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-4"><button type="button" class="qty-btn" onclick="changeQty('MSC-4',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-4', this.value)" data-code="MSC-4"><button type="button" class="qty-btn" onclick="changeQty('MSC-4',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1770,8 +1587,7 @@
           <div class="card-name">Silver cutlery 4 items set</div>
           <div class="card-footer">
             <div class="card-price">160k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-55"><button type="button" class="qty-btn" onclick="changeQty('MSC-55',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-55', this.value)" data-code="MSC-55"><button type="button" class="qty-btn" onclick="changeQty('MSC-55',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1786,8 +1602,7 @@
           <div class="card-name">Golden cutlery 4 items set</div>
           <div class="card-footer">
             <div class="card-price">180k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-56"><button type="button" class="qty-btn" onclick="changeQty('MSC-56',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-56', this.value)" data-code="MSC-56"><button type="button" class="qty-btn" onclick="changeQty('MSC-56',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1802,8 +1617,7 @@
           <div class="card-name">Wine bottle opener</div>
           <div class="card-footer">
             <div class="card-price">105k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-570"><button type="button" class="qty-btn" onclick="changeQty('MSC-570',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-570', this.value)" data-code="MSC-570"><button type="button" class="qty-btn" onclick="changeQty('MSC-570',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1818,8 +1632,7 @@
           <div class="card-name">Bar tools kit 5 items</div>
           <div class="card-footer">
             <div class="card-price">270k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-58"><button type="button" class="qty-btn" onclick="changeQty('MSC-58',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-58', this.value)" data-code="MSC-58"><button type="button" class="qty-btn" onclick="changeQty('MSC-58',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1834,8 +1647,7 @@
           <div class="card-name">Mini hearts silicone ice mold</div>
           <div class="card-footer">
             <div class="card-price">50k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-59"><button type="button" class="qty-btn" onclick="changeQty('MSC-59',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-59', this.value)" data-code="MSC-59"><button type="button" class="qty-btn" onclick="changeQty('MSC-59',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1850,8 +1662,7 @@
           <div class="card-name">Wing corkscrew wine opener</div>
           <div class="card-footer">
             <div class="card-price">50k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-60"><button type="button" class="qty-btn" onclick="changeQty('MSC-60',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-60', this.value)" data-code="MSC-60"><button type="button" class="qty-btn" onclick="changeQty('MSC-60',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1866,8 +1677,7 @@
           <div class="card-name">Wine decanter</div>
           <div class="card-footer">
             <div class="card-price">600k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-630"><button type="button" class="qty-btn" onclick="changeQty('MSC-630',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-630', this.value)" data-code="MSC-630"><button type="button" class="qty-btn" onclick="changeQty('MSC-630',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1882,8 +1692,7 @@
           <div class="card-name">Wine decanter</div>
           <div class="card-footer">
             <div class="card-price">800k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-64"><button type="button" class="qty-btn" onclick="changeQty('MSC-64',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-64', this.value)" data-code="MSC-64"><button type="button" class="qty-btn" onclick="changeQty('MSC-64',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
       <div class="card" data-cat="misc">
@@ -1898,8 +1707,7 @@
           <div class="card-name">Wine decanter</div>
           <div class="card-footer">
             <div class="card-price">600k <span>IDR</span></div>
-          <div class="qty-control" data-code="MSC-65"><button type="button" class="qty-btn" onclick="changeQty('MSC-65',-1)" aria-label="мінус">&minus;</button><input type="number" class="qty-input" min="0" step="1" value="0" inputmode="numeric" oninput="saveQty('MSC-65', this.value)" data-code="MSC-65"><button type="button" class="qty-btn" onclick="changeQty('MSC-65',1)" aria-label="плюс">+</button></div>
-        </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1921,97 +1729,6 @@
           );
         });
       }
-
-      // ---- Inventory count: saved per item in this browser ----
-      const INVENTORY_KEY = "wineGlassUbudInventory";
-
-      function loadInventory() {
-        try {
-          return JSON.parse(localStorage.getItem(INVENTORY_KEY)) || {};
-        } catch (e) {
-          return {};
-        }
-      }
-
-      function writeInventory(data) {
-        localStorage.setItem(INVENTORY_KEY, JSON.stringify(data));
-      }
-
-      function saveQty(code, value) {
-        let qty = parseInt(value, 10);
-        if (isNaN(qty) || qty < 0) qty = 0;
-        const input = document.querySelector(
-          `.qty-input[data-code="${code}"]`,
-        );
-        if (input) input.value = qty;
-
-        const data = loadInventory();
-        if (qty === 0) {
-          delete data[code];
-        } else {
-          data[code] = qty;
-        }
-        writeInventory(data);
-        flashSaved(code);
-        updateInventoryStatus();
-      }
-
-      function changeQty(code, delta) {
-        const input = document.querySelector(
-          `.qty-input[data-code="${code}"]`,
-        );
-        if (!input) return;
-        const current = parseInt(input.value, 10) || 0;
-        saveQty(code, current + delta);
-      }
-
-      function flashSaved(code) {
-        const control = document.querySelector(
-          `.qty-control[data-code="${code}"]`,
-        );
-        if (!control) return;
-        control.classList.remove("saved");
-        // restart animation
-        void control.offsetWidth;
-        control.classList.add("saved");
-      }
-
-      function updateInventoryStatus() {
-        const data = loadInventory();
-        const codes = Object.keys(data);
-        const status = document.getElementById("inventoryStatus");
-        if (!status) return;
-        if (codes.length === 0) {
-          status.textContent = "";
-        } else {
-          const totalUnits = codes.reduce((sum, c) => sum + data[c], 0);
-          status.textContent = `Заповнено позицій: ${codes.length} · Всього одиниць: ${totalUnits}`;
-        }
-      }
-
-      function resetInventory() {
-        if (!confirm("Очистити всі введені кількості на цій сторінці?")) {
-          return;
-        }
-        localStorage.removeItem(INVENTORY_KEY);
-        document.querySelectorAll(".qty-input").forEach((input) => {
-          input.value = 0;
-        });
-        updateInventoryStatus();
-      }
-
-      function restoreInventory() {
-        const data = loadInventory();
-        document.querySelectorAll(".qty-input").forEach((input) => {
-          const code = input.dataset.code;
-          if (data[code] !== undefined) {
-            input.value = data[code];
-          }
-        });
-        updateInventoryStatus();
-      }
-
-      document.addEventListener("DOMContentLoaded", restoreInventory);
     </script>
   </body>
 </html>

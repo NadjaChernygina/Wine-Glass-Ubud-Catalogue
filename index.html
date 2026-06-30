@@ -325,6 +325,9 @@
       <button class="filter-btn active" onclick="filterCards('all', this)">
         All items
       </button>
+      <button class="filter-btn" onclick="filterCards('instock', this)">
+        In Stock
+      </button>
       <button class="filter-btn" onclick="filterCards('wine', this)">
         Wine glasses
       </button>
@@ -4350,10 +4353,16 @@
           .forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
         document.querySelectorAll(".card").forEach((card) => {
-          card.classList.toggle(
-            "hidden",
-            cat !== "all" && card.dataset.cat !== cat,
-          );
+          if (cat === "instock") {
+            const input = card.querySelector(".qty-input");
+            const qty = input ? parseInt(input.value, 10) || 0 : 0;
+            card.classList.toggle("hidden", qty <= 0);
+          } else {
+            card.classList.toggle(
+              "hidden",
+              cat !== "all" && card.dataset.cat !== cat,
+            );
+          }
         });
       }
 
